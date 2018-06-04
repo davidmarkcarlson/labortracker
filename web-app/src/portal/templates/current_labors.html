@@ -1,0 +1,38 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} Current Labors {% endblock head_title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Current Labors</h4>
+                <p class="category">Select A Patient to View their Partograph</p>
+            </div>
+            <!-- TODO : Add for loop of context of patients that are passed-->
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Dilation</th>
+                        <th>Descent</th>
+                        <th>Risk</th>
+                    </thead>
+                    <tbody>
+                        {% for partograph in partographs %}
+                            <tr class="clickable-row" data-href='/partograph/{{ partograph.id }}'>
+                                <td>{{ partograph.patient.name }}</td>
+                                <td>{{ dilations|get_item:partograph.id }}</td>
+                                <td>{{ descents|get_item:partograph.id }} </td>
+                                <td>{{ risks|get_item:partograph.id }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

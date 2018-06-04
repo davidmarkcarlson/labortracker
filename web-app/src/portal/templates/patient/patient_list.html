@@ -1,0 +1,44 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} Patient List {% endblock head_title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Patients</h4>
+                <p class="category">Select A Patient to View their Information</p>
+            </div>
+            <!-- TODO : Add for loop of context of patients that are passed-->
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gravida</th>
+                        <th>Para</th>
+                        <th>Weight (lbs.)</th>
+                        <th>Height (in.)</th>
+                        <th>BMI</th>
+                    </thead>
+                    <tbody>
+                        {% for patient in patients %}
+                            <tr class="clickable-row" data-href='/patient/{{ patient.id }}'>
+                                <td>{{ patient.name }}</td>
+                                <td>{{ patient.age }}</td>
+                                <td>{{ patient.gravida }}</td>
+                                <td>{{ patient.para }}</td>
+                                <td>{{ patient.weight }}</td>
+                                <td>{{ patient.height }}</td>
+                                <td>{{ patient.bmi }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+FROM python:3.6  
+ENV PYTHONUNBUFFERED 1  
+RUN mkdir /config  
+ADD /config/requirements.pip /config/  
+RUN pip install -r /config/requirements.pip  
+RUN mkdir /src;
+WORKDIR /src
+CMD "cd ../src && python manage.py migrate && gunicorn LaborTracker.wsgi -b 0.0.0.0:8080 --reload"
+EXPOSE 8080

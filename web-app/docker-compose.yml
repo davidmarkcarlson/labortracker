@@ -1,0 +1,9 @@
+version: '2'
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile-Prod
+    container_name: tmprd01
+    ports:
+      - "80:80"

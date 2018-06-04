@@ -1,0 +1,16 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} Home {% endblock head_title %}
+
+{% block content %}
+<div align="center">
+    <H1>Welcome {{ user.get_username }}!</H1>
+    <H2>Please select from the sidebar to begin using the application</H2>
+    <h2> - OR - </h2>
+    <h2> <u>See the application in action</u></h2>
+    <video width="400" controls="controls" preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4#t=0.5" type="video/mp4">
+    </video>
+</div>
+{% endblock content %}
