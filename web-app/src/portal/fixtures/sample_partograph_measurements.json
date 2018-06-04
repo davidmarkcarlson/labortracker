@@ -1,0 +1,282 @@
+[
+{
+    "model": "portal.partomeasure",
+    "pk": 1,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 5,
+      "descent": 1,
+      "station": "1",
+      "time_since_active_labor": "00:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-04-15T21:16:26.186Z",
+      "created_at": "2018-04-15T21:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 2,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 6,
+      "descent": 0,
+      "station": "1",
+      "time_since_active_labor": "01:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-04-15T22:16:26.186Z",
+      "created_at": "2018-04-15T22:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 3,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 7,
+      "descent": -2,
+      "station": "1",
+      "time_since_active_labor": "02:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-04-15T23:16:26.186Z",
+      "created_at": "2018-04-15T21:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 4,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 8,
+      "descent": -2,
+      "station": "1",
+      "time_since_active_labor": "03:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-05-15T00:16:26.186Z",
+      "created_at": "2018-04-15T21:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 5,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 9,
+      "descent": -3,
+      "station": "1",
+      "time_since_active_labor": "04:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-05-15T01:16:26.186Z",
+      "created_at": "2018-04-15T21:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 6,
+    "fields": {
+      "partograph": 1,
+      "dilation_cm": 10,
+      "descent": -3,
+      "station": "1",
+      "time_since_active_labor": "05:00:00",
+      "updated_at": "2018-04-15T21:16:26.186Z",
+      "time_taken": "2018-05-15T02:16:26.186Z",
+      "created_at": "2018-04-15T21:16:26.186Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 7,
+    "fields": {
+      "partograph": 2,
+      "dilation_cm": 4,
+      "descent": 1,
+      "station": "1",
+      "time_since_active_labor": "00:00:00",
+      "updated_at": "2018-04-15T21:19:03.346Z",
+      "time_taken": "2018-04-15T21:19:03.346Z",
+      "created_at": "2018-04-15T21:19:03.346Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 8,
+    "fields": {
+      "partograph": 2,
+      "dilation_cm": 8,
+      "descent": 1,
+      "station": "1",
+      "time_since_active_labor": "02:00:00",
+      "updated_at": "2018-04-15T21:19:03.346Z",
+      "time_taken": "2018-04-15T23:19:03.346Z",
+      "created_at": "2018-04-15T21:19:03.346Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 9,
+    "fields": {
+      "partograph": 2,
+      "dilation_cm": 10,
+      "descent": -3,
+      "station": "1",
+      "time_since_active_labor": "03:00:18.478176",
+      "updated_at": "2018-04-15T21:19:21.825Z",
+      "time_taken": "2018-05-15T00:19:21.825Z",
+      "created_at": "2018-04-15T21:19:21.825Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 10,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 4,
+      "descent": 0,
+      "station": "1",
+      "time_since_active_labor": "00:00:18.478176",
+      "updated_at": "2018-04-15T21:19:21.825Z",
+      "time_taken": "2018-04-15T21:19:21.825Z",
+      "created_at": "2018-04-15T21:19:21.825Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 11,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 5,
+      "descent": 1,
+      "station": "1",
+      "time_since_active_labor": "04:00:18.478176",
+      "updated_at": "2018-05-15T01:19:21.825Z",
+      "time_taken": "2018-05-15T01:19:21.825Z",
+      "created_at": "2018-05-15T01:19:21.825Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 12,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 6,
+      "descent": 1,
+      "station": "1",
+      "time_since_active_labor": "07:00:18.478176",
+      "updated_at": "2018-04-15T21:19:21.825Z",
+      "time_taken": "2018-05-15T04:19:21.825Z",
+      "created_at": "2018-04-15T21:19:21.825Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 13,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 7,
+      "descent": -1,
+      "station": "1",
+      "time_since_active_labor": "10:00:18.478176",
+      "updated_at": "2018-04-15T21:19:21.825Z",
+      "time_taken": "2018-05-15T07:19:21.825Z",
+      "created_at": "2018-04-15T21:19:21.825Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 14,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 8,
+      "descent": -1,
+      "station": "2",
+      "time_since_active_labor": "12:30:19.742249",
+      "updated_at": "2018-04-15T21:19:41.567Z",
+      "time_taken": "2018-05-15T09:19:41.567Z",
+      "created_at": "2018-04-15T21:19:41.567Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 19,
+    "fields": {
+      "partograph": 3,
+      "dilation_cm": 9,
+      "descent": -1,
+      "station": "2",
+      "time_since_active_labor": "14:29:19.742249",
+      "updated_at": "2018-04-15T21:19:41.567Z",
+      "time_taken": "2018-05-15T11:48:41.567Z",
+      "created_at": "2018-04-15T21:19:41.567Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 15,
+    "fields": {
+      "partograph": 4,
+      "dilation_cm": 7,
+      "descent": -2,
+      "station": "1",
+      "time_since_active_labor": "00:00:29.099509",
+      "updated_at": "2018-04-15T21:20:10.667Z",
+      "time_taken": "2018-04-15T21:20:10.667Z",
+      "created_at": "2018-04-15T21:20:10.667Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 16,
+    "fields": {
+      "partograph": 4,
+      "dilation_cm": 9,
+      "descent": -3,
+      "station": "1",
+      "time_since_active_labor": "01:00:29.099509",
+      "updated_at": "2018-04-15T21:20:10.667Z",
+      "time_taken": "2018-04-15T22:20:10.667Z",
+      "created_at": "2018-04-15T21:20:10.667Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 17,
+    "fields": {
+      "partograph": 4,
+      "dilation_cm": 10,
+      "descent": -3,
+      "station": "1",
+      "time_since_active_labor": "01:20:29.099509",
+      "updated_at": "2018-04-15T21:20:10.667Z",
+      "time_taken": "2018-04-15T22:41:00.667Z",
+      "created_at": "2018-04-15T21:20:10.667Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 18,
+    "fields": {
+      "partograph": 5,
+      "dilation_cm": 5,
+      "descent": -1,
+      "station": "1",
+      "time_since_active_labor": "00:20:29.099509",
+      "updated_at": "2018-04-15T21:20:10.667Z",
+      "time_taken": "2018-04-15T21:20:10.667Z",
+      "created_at": "2018-04-15T21:20:10.667Z"
+    }
+  },
+  {
+    "model": "portal.partomeasure",
+    "pk": 20,
+    "fields": {
+      "partograph": 5,
+      "dilation_cm": 6,
+      "descent": -1,
+      "station": "1",
+      "time_since_active_labor": "10:20:29.099509",
+      "updated_at": "2018-04-15T21:20:10.667Z",
+      "time_taken": "2018-05-15T07:20:10.667Z",
+      "created_at": "2018-04-15T21:20:10.667Z"
+    }
+  }
+]

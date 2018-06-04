@@ -1,0 +1,177 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} Partograph {% endblock head_title %}
+
+{% block content %}
+<html>
+<head>
+    <title>FC-python wrapper</title>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'chart/Chart.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'chart/utils.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jspdf/jspdf.min.js' %}"></script>
+</head>
+<body>
+
+<div class="page-header">
+    <h1 class="h2">{{ patient.name }}'s Partograph </h1>
+    <h4 class="h3">Current status: {{ status }}</h4>
+    <h5>Age: <b>{{ patient.age }}</b> Gravida: <b>{{ patient.gravida }}</b> Para: <b>{{ patient.para }}</b></h5>
+    <h5>Weight: <b>{{ patient.weight }}</b> Height: <b>{{ patient.height }}</b> BMI: <b>{{ patient.bmi }}</b></h5>
+    <button id="btnDownload" type="button" class="btn btn-sm btn-outline-secondary">Download Partograph</button>
+    {% if partograph.active %}
+    <a href="/add-reading">
+        <button class="btn  btn-info btn-sm">Add Reading</button>
+    </a>
+    <a href="/complete-delivery">
+        <button class="btn btn-sm">Complete Delivery</button>
+    </a>
+    {% endif %}
+</div>
+
+<div class="chartjs-size-monitor">
+    <canvas id="chart-1" width="100%" height="40%" class="chartjs-render-monitor"
+            style="display: block; width: 100%; height:80%">
+    </canvas>
+</div>
+
+</body>
+<script type="text/javascript">
+    var utils = Samples.utils;
+    var presets = window.chartColors;
+
+    /*
+    function getLabels() {
+        return {{ labels|safe }};
+    }
+    */
+
+    function getDystocia() {
+        return {{ dystocia | safe }};  // Autoformat breaks template language
+    }
+
+    function getDilation() {
+        return {{ dilation | safe }};
+    }
+
+    function getDescent() {
+        return {{ descent | safe }};
+    }
+
+    var data = {
+        //labels: getLabels(),
+        datasets: [
+            {
+                label: 'Cervical Dilation',
+                backgroundColor: utils.transparentize(presets.green),
+                borderColor: presets.green,
+                data: getDilation(),
+                hidden: false,
+                fill: false,
+                pointStyle: 'crossRot',
+                radius: 7,
+                yAxisID: 'y-axis-dilation'
+            },
+            {
+                label: 'Descent',
+                backgroundColor: utils.transparentize(presets.blue),
+                borderColor: presets.blue,
+                data: getDescent(),
+                hidden: false,
+                fill: false,
+                radius: 5,
+                yAxisID: 'y-axis-descent'
+            },
+            {
+                label: 'Dystocia',
+                backgroundColor: utils.transparentize(presets.red),
+                data: getDystocia(),
+                pointStyle: 'line',
+                hidden: false
+            }
+        ]
+    };
+
+    var options = {
+            maintainAspectRatio: true,
+            scales: {
+                xAxes: [{
+                    type: 'linear',
+                    position: 'bottom',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Time (hours)'
+                    },
+                    ticks: {
+                        min: 0,
+                        max: {{ maxHours }}
+                    },
+            stepSize: 1
+        },
+    ],
+    yAxes: [
+        {
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+                display: true,
+                labelString: 'Cervical Dilation'
+            },
+            id: 'y-axis-dilation',
+            ticks: {
+                beginAtZero: false,
+                callback: function (value, index, values) {
+                    return value + 'cm';
+                }
+            }
+        },
+        {
+            type: 'linear',
+            position: 'right',
+            id: 'y-axis-descent',
+            scaleLabel: {
+                display: true,
+                labelString: 'Fetal Descent'
+            },
+            gridLines: {
+                drawOnChartArea: false
+            },
+            ticks: {
+                min: -3,
+                max: 3,
+                stepSize: 1,
+                reverse: true
+            }
+        }
+    ]
+    }
+    }
+    ;
+
+    var chart = new Chart('chart-1', {type: 'line', data: data, options: options});
+    var patientName =  '{{ patient.name }}';
+
+    // match page background so renders correctly on pdf
+    Chart.plugins.register({
+        beforeDraw: function(c) {
+            var ctx = c.chart.ctx;
+            ctx.fillStyle = '#F7F7F8';
+            ctx.fillRect(0, 0, c.chart.width, c.chart.height);
+        }
+    });
+
+    function downloadPDF() {
+        var output = document.querySelector('#chart-1');
+        var outputImage = output.toDataURL("image/jpeg", 1.0);
+        var doc = new jsPDF('landscape');
+        doc.addImage(outputImage, 'JPEG', 15, 30, 270, 107);
+        doc.text(15, 15, 'Partograph for: ' + patientName);
+        doc.text(15, 20, 'Retrieved: ' + new Date().toLocaleString());
+        doc.save('partograph.pdf');
+    }
+
+    document.getElementById('btnDownload').addEventListener('click', downloadPDF);
+</script>
+</html>
+{% endblock content %}

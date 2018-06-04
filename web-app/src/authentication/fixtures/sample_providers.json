@@ -1,0 +1,203 @@
+[
+	{
+    "model": "authentication.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$tZpK8jB1u2tQ$p200OZjmIullWvAZzuu7kSz2JB0Cn9E61G4wcBu1rt0=",
+      "last_login": "2018-04-15T21:03:46.749Z",
+      "username": "lee",
+      "first_name": "lee",
+      "last_name": "brown",
+      "email": "leelbrown@gmail.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "practitioner": null,
+      "patient": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 3,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR1",
+      "first_name": "DR1",
+      "last_name": "DR1",
+      "email": "DR1@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 1,
+      "patient": 1,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 4,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR2",
+      "first_name": "DR2",
+      "last_name": "DR2",
+      "email": "DR2@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 2,
+      "patient": 2,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$3R0OHDtk64OX$HOZy/vX+Qzh0Jsae3tBfR+W120FY1qt5okinahAXxEw=",
+      "last_login": "2018-04-15T21:47:12.327Z",
+      "username": "DrBob",
+      "first_name": "DrBob",
+      "last_name": "DrBob",
+      "email": "DrBob@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 7,
+      "patient": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 10,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR3",
+      "first_name": "DR3",
+      "last_name": "DR3",
+      "email": "DR3@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 3,
+      "patient": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 7,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR4",
+      "first_name": "DR4",
+      "last_name": "DR4",
+      "email": "DR4@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 4,
+      "patient": 4,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 8,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR5",
+      "first_name": "DR5",
+      "last_name": "DR5",
+      "email": "DR5@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 5,
+      "patient": 5,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": 9,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "username": "DR6",
+      "first_name": "DR6",
+      "last_name": "DR6",
+      "email": "DR6@email.com",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "practitioner": 6,
+      "patient": 6,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+		"model": "authentication.practitioner",
+		"pk": 1,
+		"fields": {
+		  "title": "DR1"
+		}
+	},
+	{
+		"model": "authentication.practitioner",
+		"pk": 2,
+		"fields": {
+		  "title": "DR2"
+		}
+	},
+{
+		"model": "authentication.practitioner",
+		"pk": 3,
+		"fields": {
+		  "title": "DR3"
+		}
+	},
+	{
+		"model": "authentication.practitioner",
+		"pk": 4,
+		"fields": {
+		  "title": "DR4"
+		}
+	},
+	{
+		"model": "authentication.practitioner",
+		"pk": 5,
+		"fields": {
+		  "title": "DR5"
+		}
+	},
+	{
+		"model": "authentication.practitioner",
+		"pk": 6,
+		"fields": {
+		  "title": "DR6"
+		}
+	},
+	{
+		"model": "authentication.practitioner",
+		"pk": 7,
+		"fields": {
+		  "title": "DrBob"
+		}
+	}
+]

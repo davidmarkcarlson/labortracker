@@ -1,0 +1,362 @@
+[
+  {
+    "model": "portal.partograph",
+    "pk": 1,
+    "fields": {
+      "patient": 1,
+      "provider": 1,
+      "active": false,
+      "delivery_time": "2018-05-15T02:16:26.186Z",
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": 9,
+      "live_birth": true,
+      "newborn_weight_lbs": 8,
+      "newborn_weight_oz": 7,
+      "updated_at": "2018-05-15T02:20:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 2,
+    "fields": {
+      "patient": 2,
+      "provider": 2,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 3,
+    "fields": {
+      "patient": 3,
+      "provider": 3,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 4,
+    "fields": {
+      "patient": 4,
+      "provider": 4,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 5,
+    "fields": {
+      "patient": 5,
+      "provider": 5,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 6,
+    "fields": {
+      "patient": 6,
+      "provider": 6,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 7,
+    "fields": {
+      "patient": 7,
+      "provider": 7,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 8,
+    "fields": {
+      "patient": 8,
+      "provider": 2,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 9,
+    "fields": {
+      "patient": 9,
+      "provider": 3,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 10,
+    "fields": {
+      "patient": 10,
+      "provider": 5,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 11,
+    "fields": {
+      "patient": 11,
+      "provider": 1,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 12,
+    "fields": {
+      "patient": 12,
+      "provider": 2,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 13,
+    "fields": {
+      "patient": 13,
+      "provider": 3,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 14,
+    "fields": {
+      "patient": 14,
+      "provider": 4,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 15,
+    "fields": {
+      "patient": 15,
+      "provider": 5,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 16,
+    "fields": {
+      "patient": 16,
+      "provider": 6,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 17,
+    "fields": {
+      "patient": 17,
+      "provider": 1,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 18,
+    "fields": {
+      "patient": 18,
+      "provider": 2,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 19,
+    "fields": {
+      "patient": 19,
+      "provider": 1,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:15:38.384Z"
+    }
+  },
+  {
+    "model": "portal.partograph",
+    "pk": 20,
+    "fields": {
+      "patient": 20,
+      "provider": 1,
+      "active": true,
+      "delivery_time": null,
+      "delivery_type": null,
+      "caesarian": false,
+      "cs_decision_time": null,
+      "initial_apgar": null,
+      "live_birth": false,
+      "newborn_weight_lbs": null,
+      "newborn_weight_oz": null,
+      "updated_at": "2018-04-15T21:18:44.357Z"
+    }
+  }
+]

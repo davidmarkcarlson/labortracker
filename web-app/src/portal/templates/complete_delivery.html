@@ -1,0 +1,47 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} Complete Delivery {% endblock head_title %}
+
+{% block content %}
+{% load tz %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">{% block page-title %} Complete Delivery {% endblock page-title %}</h4>
+                <h5>Patient: {{ patient.name }}</h5>
+                <h5>Age: {{ patient.age }}</h5>
+                <h5>Date of admission: {{ patient.date_of_admission }}</h5>
+            </div>
+            <div class="content">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in form.visible_fields %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ field.errors }}
+                                <label>{{ field.label_tag }}</label>
+                                {% if field.name == 'delivery_date' or field.name == 'delivery_time' %}
+                                    {% localtime on %}
+                                    {{ field }}
+                                    {% endlocaltime %}
+                                {% else %}
+                                    {{ field }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <button type="cancel" class="btn btn-fill">Cancel</button>
+                    <button type="submit" class="btn btn-info btn-danger btn-fill pull-right">Complete Delivery</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

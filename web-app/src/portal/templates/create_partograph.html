@@ -1,0 +1,47 @@
+{% extends 'baseportal.html' %}
+{% load staticfiles %}
+
+{% block head_title %} {{ title }} {% endblock head_title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h3 class="title">{% block page-title %} Create Partograph {% endblock page-title %}</h3>
+            </div>
+            <div class="content">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <h4><u>Patient Information</u></h4>
+                    {% for field in patient_form %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ field.errors }}
+                                <label>{{ field.label_tag }}</label>
+                                {{ field }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <h4><u>Partograph Information</u></h4>
+                    {% for field in parto_form %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ field.errors }}
+                                <label>{{ field.label_tag }}</label>
+                                {{ field }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Create Partograph</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

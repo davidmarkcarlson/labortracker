@@ -1,0 +1,96 @@
+{% extends 'authbase.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block head-title %} {{ title }} {% endblock head-title %}
+{% block form-title %} {{ form_title }} {% endblock form-title %}
+
+{% block form %}
+
+		{% if form.errors %}
+			{% for field in form %}
+				{% for error in field.errors %}
+					<div class="alert alert-danger">
+						<strong>{{ error|escape }}</strong>
+					</div>
+				{% endfor %}
+			{% endfor %}
+			{% for error in form.non_field_errors %}
+				<div class="alert alert-danger">
+					<strong>{{ error|escape }}</strong>
+				</div>
+			{% endfor %}
+		{% endif %}
+
+		<span class="label-input100">First Name</span>
+		<div class="wrap-input100 validate-input" data-validate="Firstname is required">
+			{{ form.first_name | add_class:"input100" | attr:"placeholder:Firstname..."  }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<span class="label-input100">Last Name</span>
+		<div class="wrap-input100 validate-input" data-validate="Lastname is required">
+			{{ form.last_name | add_class:"input100" | attr:"placeholder:Lastname..."  }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<span class="label-input100">Email</span>
+		<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+			{{ form.email | add_class:"input100" | attr:"placeholder:Email address..."  }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<span class="label-input100">Username</span>
+		<div class="wrap-input100 validate-input" data-validate="Username is required">
+			{{ form.username | add_class:"input100" | attr:"placeholder:Username..."  }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-user" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<span class="label-input100">Password</span>
+		<div class="wrap-input100 validate-input" data-validate = "Password is required">
+			{{ form.password1 | add_class:"input100" | attr:"placeholder:*************" | attr:"type:password" }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-lock" aria-hidden="true"></i>
+			</span>
+		</div>
+
+		<span class="label-input100">Confirm Password</span>
+		<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+			{{ form.password2 | add_class:"input100" | attr:"placeholder:*************" | attr:"type:password" }}
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-lock" aria-hidden="true"></i>
+			</span>
+		</div>
+		{% for error in form.password2.errors %}
+			<span class="text-danger">{{ error }}</span>
+		{% endfor %}
+
+		<div class="container-login100-form-btn">
+			<div class="wrap-login100-form-btn">
+				<div class="login100-form-bgbtn"></div>
+				<button class="login100-form-btn">
+					Sign Up
+				</button>
+			</div>
+
+			<a href="../login" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+				Sign in
+				<i class="fa fa-long-arrow-right m-l-5"></i>
+			</a>
+		</div>
+
+{% endblock form %}

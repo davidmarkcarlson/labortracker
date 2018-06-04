@@ -1,0 +1,4 @@
+FROM nginx:latest
+COPY ./src /src
+COPY ./config/nginx /etc/nginx/conf.d
+EXPOSE 8080
