@@ -49,8 +49,7 @@ class Partograph(models.Model):
     
     def get_dystocia_points(self):
         traverseTimes = get_traverse_times(self.patient)
-        # start plot hour in front of earliest time for graphs aesthetics
-        points = [{'x':traverseTimes[0]-1, 'y':4}] 
+        points = [{'x':traverseTimes[0], 'y':4}] 
         dilationStart = 5
         previous = 0
         for i in range(len(traverseTimes)):
