@@ -45,13 +45,14 @@ class AddReading(Form):
     partograph = IntegerField(widget=HiddenInput(), required=False)
     dilation_cm = IntegerField(label='Dilation (cm)', required=True, widget=TextInput(attrs={'class': 'form-control'}),
                                min_value=4, max_value=10)
-    descent = IntegerField(label='Descent', required=True, widget=TextInput(attrs={'class': 'form-control'}),
-                           min_value=-3, max_value=3)
-    date_taken = DateField(required=True, initial=timezone.now(), widget=DateInput(attrs={'class': 'form-control', 'type': 'date'}))
-    time_taken = TimeField(required=True, initial=timezone.now(), widget=TimeInput(attrs={'class': 'form-control', 'type': 'time'}))
-    time_hr = IntegerField(label='Hour', required=False, widget=TextInput(attrs={'class': 'form-control'}), min_value=0,
-                           max_value=24)
-    station = CharField(label='Station', required=True, widget=TextInput(attrs={'class': 'form-control'}))
+    #descent = IntegerField(label='Descent', required=True, widget=TextInput(attrs={'class': 'form-control'}),
+    #                       min_value=-3, max_value=3)
+    localtime = timezone.localtime(timezone.now())
+    date_taken = DateField(required=True, initial=localtime, widget=DateInput(attrs={'class': 'form-control', 'type': 'date'}))
+    time_taken = TimeField(required=True, initial=localtime, widget=TimeInput(attrs={'class': 'form-control', 'type': 'time'}))
+    #time_hr = IntegerField(label='Hour', required=False, widget=TextInput(attrs={'class': 'form-control'}), min_value=0,
+    #                       max_value=24)
+    #station = CharField(label='Station', required=True, widget=TextInput(attrs={'class': 'form-control'}))
 
     #def clean_time_taken(self):
     #    data = self.cleaned_data['time_taken']

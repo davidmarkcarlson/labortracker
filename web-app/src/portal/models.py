@@ -39,6 +39,7 @@ class Partograph(models.Model):
     # Store Finalized Data to complete Partograph
     delivery_time = models.DateTimeField(blank=True, null=True)
     delivery_type = models.IntegerField(choices=DELIVERY_TYPES, null=True)
+    labor_start = models.DateTimeField(blank=True, null=True)
     caesarian = models.BooleanField(default=False)
     cs_decision_time = models.DateTimeField(null=True)
     initial_apgar = models.CharField(max_length=255, null=True)
@@ -46,27 +47,31 @@ class Partograph(models.Model):
     newborn_weight_lbs = models.IntegerField(null=True)
     newborn_weight_oz = models.IntegerField(null=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
+
     def get_dystocia_points(self):
         traverseTimes = get_traverse_times(self.patient)
-        points = [{'x':traverseTimes[0], 'y':4}] 
+        points = [{'x':traverseTimes[0], 'y':4}]
         dilationStart = 5
         previous = 0
         for i in range(len(traverseTimes)):
             time = traverseTimes[i]
             if i == 0:
-                points.append({'x':time, 'y':dilationStart})
+                x = time
+                # shift x back by traverseTimes[0] so we can show
+                # the line starting at 0 hour in the middle
+                points.append({'x': x - traverseTimes[0], 'y':dilationStart})
             else:
-                points.append({'x':time+previous, 'y':dilationStart+i})
-            previous = time+previous
-        return points
+                x = (time+previous)
+                points.append({'x': x - traverseTimes[0], 'y':dilationStart+i})
+            previous = x
+        return points, traverseTimes[0]
 
 
 class PartoMeasure(models.Model):
     partograph = models.ForeignKey(Partograph, on_delete=models.CASCADE)
     dilation_cm = models.SmallIntegerField()
-    descent = models.IntegerField()  # Stores Descent of Fetal Head
-    station = models.CharField(max_length=255)
+    descent = models.IntegerField(null=True)  # Stores Descent of Fetal Head
+    station = models.CharField(max_length=255, null=True)
     time_since_active_labor = models.DurationField()
     # TODO Evaluate
     updated_at = models.DateTimeField(auto_now=True)

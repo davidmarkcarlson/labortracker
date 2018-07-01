@@ -100,14 +100,15 @@ def partograph(request, partograph_id=0):
     }
 
     measures = get_measures(partograph)
-    dystocia = partograph.get_dystocia_points()
+    dystocia, m = partograph.get_dystocia_points()
     context = {
         'patient': patient,
         'partograph': partograph,
         'dystocia': dystocia,
         'maxHours': max(node['x'] for node in dystocia),
+        'minHours': -m,
         'dilation': measures['dilation'],
-        'descent': measures['descent'],
+        #'descent': measures['descent'],
         'status': get_status(partograph, dystocia)
     }
     if not partograph.active:
@@ -135,26 +136,31 @@ def add_reading(request):
 
         update_time = timezone.make_aware(datetime.combine(form.cleaned_data['date_taken'], form.cleaned_data['time_taken']))
         measure.time_taken = update_time
-
-        time_hr = form.cleaned_data['time_hr']
-        if all_measures is None or len(all_measures) == 0:
-            measure.time_since_active_labor = timedelta()
-        else:
-            first_measure = all_measures[0]
-            if time_hr is None:
-                measure.time_since_active_labor = measure.time_taken - first_measure.time_taken
-            else:
-                measure.time_since_active_labor = timedelta(hours=time_hr)  # To sec
-                measure.time_taken = first_measure.time_taken + measure.time_since_active_labor
-                print("Time hr = {}, time_taken = {}".format(time_hr, measure.time_taken))
-
-        measure.partograph = partograph
+        #time_hr = form.cleaned_data['time_hr']
+       
         measure.dilation_cm = form.cleaned_data['dilation_cm']
-        #measure.time_since_active_labor = timedelta(first_measure.time_taken, timedelta(0, form.cleaned_data['time_hr']*3600)+first_measure.time_taken)
-        measure.descent = form.cleaned_data['descent']
-        measure.station = form.cleaned_data['station']
-        measure.save()
+        if all_measures and measure.dilation_cm >= 5:
+            if not partograph.labor_start:
+                partograph.labor_start = measure.time_taken
+            measure.time_since_active_labor = measure.time_taken - partograph.labor_start
+            # no measurements are recorded until we measure at least 5 cm?
+            measure.partograph = partograph
+            measure.save()
         return redirect('/partograph/{}'.format(partograph.id))
+
+        # this method uses the hours since labor start input instead of time input
+        #else:
+        #    first_measure = all_measures[0]
+        #    if time_hr is None:
+        #        measure.time_since_active_labor = measure.time_taken - partograph.labor_start
+        #    else:
+        #        measure.time_since_active_labor = timedelta(hours=time_hr)  # To sec
+        #        measure.time_taken = first_measure.time_taken + measure.time_since_active_labor
+        #        print("Time hr = {}, time_taken = {}".format(time_hr, measure.time_taken))
+        #measure.time_since_active_labor = timedelta(first_measure.time_taken, timedelta(0, form.cleaned_data['time_hr']*3600)+first_measure.time_taken)
+        #measure.descent = form.cleaned_data['descent']
+        #measure.station = form.cleaned_data['station']
+
     elif request.method == 'POST' and not form.is_valid():
         return render(request, 'add_reading.html', context={"form": form})
     return render(request, 'add_reading.html', context={"form": AddReading()})

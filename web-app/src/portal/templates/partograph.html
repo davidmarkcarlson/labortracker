@@ -15,7 +15,7 @@
 <body>
 
 <div class="page-header">
-    <h1 class="h2">{{ patient.name }}'s Partograph </h1>
+    <h1 class="h2">Partograph </h1>
     <h4 class="h3">Current status: {{ status }}</h4>
     <h5>Age: <b>{{ patient.age }}</b> Gravida: <b>{{ patient.gravida }}</b> Para: <b>{{ patient.para }}</b></h5>
     <h5>Weight: <b>{{ patient.weight }}</b> Height: <b>{{ patient.height }}</b> BMI: <b>{{ patient.bmi }}</b></h5>
@@ -71,8 +71,10 @@
                 fill: false,
                 pointStyle: 'crossRot',
                 radius: 7,
-                yAxisID: 'y-axis-dilation'
+                yAxisID: 'y-axis-dilation',
+                borderDash: [10,5]
             },
+            /*
             {
                 label: 'Descent',
                 backgroundColor: utils.transparentize(presets.blue),
@@ -83,6 +85,7 @@
                 radius: 5,
                 yAxisID: 'y-axis-descent'
             },
+            */
             {
                 label: 'Dystocia',
                 backgroundColor: utils.transparentize(presets.red),
@@ -96,6 +99,11 @@
 
     var options = {
             maintainAspectRatio: true,
+            elements: {
+                line: {
+                    tension: 0
+                }
+            },
             scales: {
                 xAxes: [{
                     type: 'linear',
@@ -105,50 +113,59 @@
                         labelString: 'Time (hours)'
                     },
                     ticks: {
-                        min: 0,
-                        max: {{ maxHours }}
+                        min: {{ minHours }}, // TODO: DYNAMIC MIN
+                        max: {{ maxHours }},
+                        // hide negative labels
+                        callback: function(value, index) {
+                            if (value < 0 || !Number.isInteger(value)) return ''
+                            return value;
+                        },
+                        stepSize: 1
                     },
-            stepSize: 1
-        },
-    ],
-    yAxes: [
-        {
-            type: 'linear',
-            position: 'left',
-            scaleLabel: {
-                display: true,
-                labelString: 'Cervical Dilation'
-            },
-            id: 'y-axis-dilation',
-            ticks: {
-                beginAtZero: false,
-                callback: function (value, index, values) {
-                    return value + 'cm';
+                    gridLines: {
+                        display: false,
+                    },
+                },
+            ],
+            yAxes: [
+                {
+                    type: 'linear',
+                    position: 'left',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Cervical Dilation'
+                    },
+                    id: 'y-axis-dilation',
+                    ticks: {
+                        beginAtZero: false,
+                        callback: function (value, index, values) {
+                            return value + 'cm';
+                        }
+                    }
                 }
-            }
-        },
-        {
-            type: 'linear',
-            position: 'right',
-            id: 'y-axis-descent',
-            scaleLabel: {
-                display: true,
-                labelString: 'Fetal Descent'
-            },
-            gridLines: {
-                drawOnChartArea: false
-            },
-            ticks: {
-                min: -3,
-                max: 3,
-                stepSize: 1,
-                reverse: true
-            }
+                /*
+                {
+                    type: 'linear',
+                    position: 'right',
+                    id: 'y-axis-descent',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Fetal Descent'
+                    },
+                    gridLines: {
+                        drawOnChartArea: false
+                    },
+                    ticks: {
+                        min: -3,
+                        max: 3,
+                        stepSize: 1,
+                        reverse: true
+                    }
+                }
+                */
+            ]
         }
-    ]
-    }
-    }
-    ;
+    };
 
     var chart = new Chart('chart-1', {type: 'line', data: data, options: options});
     var patientName =  '{{ patient.name }}';
